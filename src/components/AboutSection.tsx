@@ -26,24 +26,23 @@ const AboutSection = () => {
           About the Main Event
         </h2>
         
-        <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-16">
-          E.D.I.T.H 1.0 brings together innovators, enthusiasts, and industry professionals for a day of learning 
-          and hands-on exploration in Robotics, IoT, and Embedded Systems. Participants engage in talks, design 
-          challenges, and live competitions that highlight creativity, teamwork, and technological excellence.
+        <p className="text-base md:text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">
+          A day of hands-on exploration in Robotics, IoT & Embedded Systems featuring expert talks, 
+          design challenges, and live competitions.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group bg-gradient-card p-8 rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 animate-slide-up"
+              className="group bg-gradient-card p-6 md:p-8 rounded-xl md:rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                <feature.icon className="w-8 h-8 text-primary" />
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-primary/10 rounded-lg md:rounded-xl flex items-center justify-center mb-4 md:mb-6 group-hover:bg-primary/20 transition-colors">
+                <feature.icon className="w-6 h-6 md:w-8 md:h-8 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
+              <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">{feature.title}</h3>
+              <p className="text-sm md:text-base text-muted-foreground">{feature.description}</p>
             </div>
           ))}
         </div>

@@ -96,48 +96,48 @@ const RegistrationSection = () => {
   };
 
   return (
-    <section className="py-20 px-4 bg-muted/30">
+    <section className="py-12 md:py-20 px-4 bg-muted/30">
       <div className="container mx-auto max-w-2xl">
-        <h2 className="text-4xl font-bold text-center mb-6 bg-gradient-primary bg-clip-text text-transparent">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 md:mb-6 bg-gradient-primary bg-clip-text text-transparent">
           Register for E.D.I.T.H 1.0
         </h2>
-        <p className="text-center text-muted-foreground mb-12">
-          Secure your spot in this exciting technical fest
+        <p className="text-center text-muted-foreground mb-8 md:mb-12 text-sm md:text-base">
+          Secure your spot in this technical fest
         </p>
 
-        <div className="bg-gradient-card p-8 md:p-12 rounded-2xl border border-border">
+        <div className="bg-gradient-card p-6 md:p-12 rounded-xl md:rounded-2xl border border-border">
           {!registered ? (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-2">
-                <Label htmlFor="fullName">Full Name *</Label>
+            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+              <div className="space-y-1.5 md:space-y-2">
+                <Label htmlFor="fullName" className="text-sm md:text-base">Full Name *</Label>
                 <Input
                   id="fullName"
                   type="text"
                   placeholder="Enter your full name"
                   value={formData.fullName}
                   onChange={(e) => handleChange("fullName", e.target.value)}
-                  className="bg-background/50"
+                  className="bg-background/50 text-sm md:text-base"
                 />
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="email">Email *</Label>
+              <div className="space-y-1.5 md:space-y-2">
+                <Label htmlFor="email" className="text-sm md:text-base">Email *</Label>
                 <Input
                   id="email"
                   type="email"
                   placeholder="your.email@example.com"
                   value={formData.email}
                   onChange={(e) => handleChange("email", e.target.value)}
-                  className="bg-background/50"
+                  className="bg-background/50 text-sm md:text-base"
                 />
               </div>
 
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="department">Department *</Label>
+              <div className="grid sm:grid-cols-2 gap-3 md:gap-4">
+                <div className="space-y-1.5 md:space-y-2">
+                  <Label htmlFor="department" className="text-sm md:text-base">Department *</Label>
                   <Select onValueChange={(value) => handleChange("department", value)}>
-                    <SelectTrigger className="bg-background/50">
-                      <SelectValue placeholder="Select department" />
+                    <SelectTrigger className="bg-background/50 text-sm md:text-base">
+                      <SelectValue placeholder="Select dept." />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="CSE">CSE</SelectItem>
@@ -151,10 +151,10 @@ const RegistrationSection = () => {
                   </Select>
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="year">Year of Study *</Label>
+                <div className="space-y-1.5 md:space-y-2">
+                  <Label htmlFor="year" className="text-sm md:text-base">Year *</Label>
                   <Select onValueChange={(value) => handleChange("year", value)}>
-                    <SelectTrigger className="bg-background/50">
+                    <SelectTrigger className="bg-background/50 text-sm md:text-base">
                       <SelectValue placeholder="Select year" />
                     </SelectTrigger>
                     <SelectContent>
@@ -167,46 +167,46 @@ const RegistrationSection = () => {
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="mobile">Mobile Number *</Label>
+              <div className="space-y-1.5 md:space-y-2">
+                <Label htmlFor="mobile" className="text-sm md:text-base">Mobile *</Label>
                 <Input
                   id="mobile"
                   type="tel"
-                  placeholder="+91 XXXXX XXXXX"
+                  placeholder="10-digit number"
                   value={formData.mobile}
                   onChange={(e) => handleChange("mobile", e.target.value)}
-                  className="bg-background/50"
+                  className="bg-background/50 text-sm md:text-base"
                 />
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="password">Password *</Label>
+              <div className="space-y-1.5 md:space-y-2">
+                <Label htmlFor="password" className="text-sm md:text-base">Password *</Label>
                 <Input
                   id="password"
                   type="password"
-                  placeholder="Create a password"
+                  placeholder="Min 6 characters"
                   value={formData.password}
                   onChange={(e) => handleChange("password", e.target.value)}
-                  className="bg-background/50"
+                  className="bg-background/50 text-sm md:text-base"
                 />
               </div>
 
-              <Button type="submit" className="w-full bg-gradient-primary hover:opacity-90 text-lg py-6" disabled={isSubmitting}>
+              <Button type="submit" className="w-full bg-gradient-primary hover:opacity-90 text-base md:text-lg py-5 md:py-6" disabled={isSubmitting}>
                 {isSubmitting ? "Registering..." : "Register Now"}
               </Button>
             </form>
           ) : (
-            <div className="text-center space-y-6 py-8">
-              <CheckCircle2 className="w-16 h-16 text-accent mx-auto" />
-              <h3 className="text-2xl font-bold">Registration Successful!</h3>
-              <p className="text-muted-foreground">
-                After registration, join the official WhatsApp group for updates and coordination.
+            <div className="text-center space-y-4 md:space-y-6 py-6 md:py-8">
+              <CheckCircle2 className="w-12 h-12 md:w-16 md:h-16 text-accent mx-auto" />
+              <h3 className="text-xl md:text-2xl font-bold">Registration Successful!</h3>
+              <p className="text-sm md:text-base text-muted-foreground px-4">
+                Join our WhatsApp group for event updates and coordination.
               </p>
               <Button
-                className="bg-[#25D366] hover:bg-[#20BA5A] text-white gap-2"
+                className="bg-[#25D366] hover:bg-[#20BA5A] text-white gap-2 text-sm md:text-base"
                 onClick={() => window.open("https://chat.whatsapp.com/samplegroup", "_blank")}
               >
-                <MessageSquare className="w-5 h-5" />
+                <MessageSquare className="w-4 h-4 md:w-5 md:h-5" />
                 Join WhatsApp Group
               </Button>
             </div>

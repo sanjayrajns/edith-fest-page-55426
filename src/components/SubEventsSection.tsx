@@ -89,48 +89,48 @@ const subEvents = [
 
 const SubEventsSection = () => {
   return (
-    <section className="py-20 px-4">
+    <section className="py-12 md:py-20 px-4">
       <div className="container mx-auto max-w-7xl">
-        <h2 className="text-4xl font-bold text-center mb-6 bg-gradient-primary bg-clip-text text-transparent">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 md:mb-6 bg-gradient-primary bg-clip-text text-transparent">
           Sub-Events
         </h2>
-        <p className="text-center text-muted-foreground mb-12 text-lg">
-          Explore our exciting lineup of technical challenges and interactive sessions
+        <p className="text-center text-muted-foreground mb-8 md:mb-12 text-base md:text-lg">
+          Technical challenges and interactive sessions
         </p>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-6">
           {subEvents.map((event, index) => (
             <div
               key={index}
-              className="bg-background/50 backdrop-blur-sm rounded-2xl border-2 border-cyan-500/50 overflow-hidden hover:border-cyan-400 hover:shadow-[0_0_30px_rgba(6,182,212,0.3)] transition-all duration-300 animate-slide-up"
+              className="bg-background/50 backdrop-blur-sm rounded-xl md:rounded-2xl border-2 border-cyan-500/50 overflow-hidden hover:border-cyan-400 hover:shadow-[0_0_30px_rgba(6,182,212,0.3)] transition-all duration-300 animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="p-6">
+              <div className="p-4 md:p-6">
                 {/* Icon and Title */}
-                <div className="flex items-start gap-3 mb-4">
-                  <div className="w-10 h-10 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <event.icon className="w-5 h-5 text-cyan-400" />
+                <div className="flex items-start gap-2 md:gap-3 mb-3 md:mb-4">
+                  <div className="w-9 h-9 md:w-10 md:h-10 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <event.icon className="w-4 h-4 md:w-5 md:h-5 text-cyan-400" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-cyan-400 mb-1">{event.title}</h3>
-                    <p className="text-sm text-muted-foreground">{event.subtitle}</p>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg md:text-xl font-bold text-cyan-400 mb-0.5 md:mb-1">{event.title}</h3>
+                    <p className="text-xs md:text-sm text-muted-foreground">{event.subtitle}</p>
                   </div>
                 </div>
 
                 {/* Time and Venue */}
-                <div className="space-y-1 mb-4 text-sm">
+                <div className="space-y-0.5 md:space-y-1 mb-3 md:mb-4 text-xs md:text-sm">
                   <p className="text-foreground"><span className="font-semibold">Time:</span> {event.time}</p>
                   <p className="text-foreground"><span className="font-semibold">Venue:</span> {event.venue}</p>
                 </div>
 
                 {/* Highlights */}
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-cyan-400 mb-2">Highlights:</h4>
-                  <ul className="space-y-1.5">
+                <div className="mb-3 md:mb-4">
+                  <h4 className="text-xs md:text-sm font-semibold text-cyan-400 mb-1.5 md:mb-2">Highlights:</h4>
+                  <ul className="space-y-1 md:space-y-1.5">
                     {event.highlights.map((highlight, hIndex) => (
-                      <li key={hIndex} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <span className="text-cyan-400 mt-1">•</span>
-                        <span>{highlight}</span>
+                      <li key={hIndex} className="flex items-start gap-2 text-xs md:text-sm text-muted-foreground">
+                        <span className="text-cyan-400 mt-0.5 md:mt-1 flex-shrink-0">•</span>
+                        <span className="flex-1">{highlight}</span>
                       </li>
                     ))}
                   </ul>
@@ -138,13 +138,13 @@ const SubEventsSection = () => {
 
                 {/* Rounds Overview for Tinkerthon */}
                 {event.roundsOverview && (
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-cyan-400 mb-2">Rounds Overview:</h4>
-                    <ul className="space-y-1.5">
+                  <div className="mb-3 md:mb-4">
+                    <h4 className="text-xs md:text-sm font-semibold text-cyan-400 mb-1.5 md:mb-2">Rounds:</h4>
+                    <ul className="space-y-1 md:space-y-1.5">
                       {event.roundsOverview.map((round, rIndex) => (
-                        <li key={rIndex} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <span className="text-cyan-400 mt-1">▪</span>
-                          <span>{round}</span>
+                        <li key={rIndex} className="flex items-start gap-2 text-xs md:text-sm text-muted-foreground">
+                          <span className="text-cyan-400 mt-0.5 md:mt-1 flex-shrink-0">▪</span>
+                          <span className="flex-1">{round}</span>
                         </li>
                       ))}
                     </ul>
@@ -154,15 +154,15 @@ const SubEventsSection = () => {
                 {/* Accordion for Rules */}
                 <Accordion type="single" collapsible>
                   <AccordionItem value={`rules-${index}`} className="border-0">
-                    <AccordionTrigger className="px-4 py-3 hover:no-underline border-2 border-cyan-500/50 rounded-lg hover:border-cyan-400 transition-colors">
-                      <span className="text-sm font-medium text-cyan-400">View Rules & Guidelines</span>
+                    <AccordionTrigger className="px-3 py-2 md:px-4 md:py-3 hover:no-underline border-2 border-cyan-500/50 rounded-lg hover:border-cyan-400 transition-colors">
+                      <span className="text-xs md:text-sm font-medium text-cyan-400">View Rules</span>
                     </AccordionTrigger>
-                    <AccordionContent className="px-4 pt-4">
-                      <ul className="space-y-2">
+                    <AccordionContent className="px-3 md:px-4 pt-3 md:pt-4">
+                      <ul className="space-y-1.5 md:space-y-2">
                         {event.rules.map((rule, ruleIndex) => (
-                          <li key={ruleIndex} className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <span className="text-cyan-400 mt-1">•</span>
-                            <span>{rule}</span>
+                          <li key={ruleIndex} className="flex items-start gap-2 text-xs md:text-sm text-muted-foreground">
+                            <span className="text-cyan-400 mt-0.5 md:mt-1 flex-shrink-0">•</span>
+                            <span className="flex-1">{rule}</span>
                           </li>
                         ))}
                       </ul>
