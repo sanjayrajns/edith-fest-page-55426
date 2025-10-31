@@ -14,9 +14,9 @@ const subEvents = [
     time: "9:30 AM – 10:30 AM",
     venue: "Seminar Hall",
     highlights: [
-      "Learn from industry experts in Robotics, AI, and Automation",
-      "Explore simulation tools and innovation frameworks",
-      "Q&A and career guidance opportunities"
+      "Learn from industry experts in <strong>Robotics</strong>, <strong>AI</strong>, and <strong>Automation</strong>",
+      "Explore <strong>simulation tools</strong> and innovation frameworks",
+      "<strong>Q&A</strong> and career guidance opportunities"
     ],
     rules: [
       "Open to all registered participants.",
@@ -33,12 +33,12 @@ const subEvents = [
     time: "10:45 AM – 1:15 PM",
     venue: "Seminar Hall",
     highlights: [
-      "Design and simulate IoT & Robotics prototypes using TinkerCAD and Wokwi in three progressive rounds: Easy, Medium, and Hard. Encourages innovation, creativity, and teamwork under mentorship."
+      "Design and simulate <strong>IoT & Robotics</strong> prototypes using <strong>TinkerCAD</strong> and <strong>Wokwi</strong> in three progressive rounds: Easy, Medium, and Hard. Encourages innovation, creativity, and teamwork under mentorship."
     ],
     roundsOverview: [
-      "Round 1 (Wokwi) – Easy: Basic circuit design",
-      "Round 2 (TinkerCAD) – Medium: Automation or sensor-based project",
-      "Round 3 (Wokwi) – Hard: System integration & simulation"
+      "<strong>Round 1</strong> (Wokwi) – Easy: Basic circuit design",
+      "<strong>Round 2</strong> (TinkerCAD) – Medium: Automation or sensor-based project",
+      "<strong>Round 3</strong> (Wokwi) – Hard: System integration & simulation"
     ],
     rules: [
       "Individual registration; 2–3 member teams formed on spot.",
@@ -56,9 +56,9 @@ const subEvents = [
     time: "2:00 PM – 2:15 PM",
     venue: "Seminar Hall",
     highlights: [
-      "Live Scorer Bot demonstration",
-      "Quick quiz on Robotics, IoT, and Embedded Systems",
-      "Interaction with IEEE-RAS coordinators"
+      "Live <strong>Scorer Bot</strong> demonstration",
+      "Quick quiz on <strong>Robotics</strong>, <strong>IoT</strong>, and <strong>Embedded Systems</strong>",
+      "Interaction with <strong>IEEE-RAS</strong> coordinators"
     ],
     rules: [
       "Open to all registered participants.",
@@ -75,7 +75,7 @@ const subEvents = [
     time: "2:15 PM – 2:45 PM",
     venue: "Seminar Hall",
     highlights: [
-      "Players compete in Robo Soccer using bots provided by the organizers – testing control, coordination, and strategy."
+      "Players compete in <strong>Robo Soccer</strong> using bots provided by the organizers – testing <strong>control</strong>, <strong>coordination</strong>, and <strong>strategy</strong>."
     ],
     rules: [
       "Bots provided by IEEE-RAS.",
@@ -132,7 +132,7 @@ const SubEventsSection = () => {
                     {event.highlights.map((highlight, hIndex) => (
                       <li key={hIndex} className="flex items-start gap-2 text-xs md:text-sm text-muted-foreground">
                         <span className="text-cyan-400 mt-0.5 md:mt-1 flex-shrink-0">•</span>
-                        <span className="flex-1">{highlight}</span>
+                        <span className="flex-1" dangerouslySetInnerHTML={{ __html: highlight }} />
                       </li>
                     ))}
                   </ul>
@@ -146,7 +146,7 @@ const SubEventsSection = () => {
                       {event.roundsOverview.map((round, rIndex) => (
                         <li key={rIndex} className="flex items-start gap-2 text-xs md:text-sm text-muted-foreground">
                           <span className="text-cyan-400 mt-0.5 md:mt-1 flex-shrink-0">▪</span>
-                          <span className="flex-1">{round}</span>
+                          <span className="flex-1" dangerouslySetInnerHTML={{ __html: round }} />
                         </li>
                       ))}
                     </ul>
