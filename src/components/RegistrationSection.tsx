@@ -204,7 +204,7 @@ const RegistrationSection = () => {
               </p>
               <Button
                 className="bg-[#25D366] hover:bg-[#20BA5A] text-white gap-2 text-sm md:text-base"
-                onClick={() => window.open("https://chat.whatsapp.com/samplegroup", "_blank")}
+                onClick={() => window.open("https://chat.whatsapp.com/Fis3S8WnR608sJsdPZ0uyb?mode=ems_share_c", "_blank")}
               >
                 <MessageSquare className="w-4 h-4 md:w-5 md:h-5" />
                 Join WhatsApp Group
