@@ -15,9 +15,10 @@ const SpeakerSection = () => {
             </div>
             
             <div className="flex-1 text-center md:text-left">
-              <h3 className="text-2xl md:text-3xl font-bold mb-2">To Be Announced</h3>
+              <h3 className="text-2xl md:text-3xl font-bold mb-2">Subhadra Singh</h3>
               <p className="text-lg md:text-xl text-primary mb-4">Industry Expert – Robotics & Automation</p>
-              
+              <p className="text-lg md:text-xl text-primary mb-4">Senior Research Member Staff , Bharat Electronics</p>
+              <p className="text-lg md:text-xl text-primary mb-4">subhadrasingh@bel.co.in</p>
               <div className="inline-flex items-center gap-2 px-3 py-2 md:px-4 bg-accent/10 border border-accent/30 rounded-lg mb-4">
                 <Clock className="w-4 h-4 text-accent flex-shrink-0" />
                 <span className="text-sm md:text-base text-accent font-medium">Minds in Motion | 9:30 - 10:30 AM</span>
