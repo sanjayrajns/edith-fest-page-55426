@@ -31,7 +31,7 @@ const subEvents = [
     title: "Tinkerthon",
     subtitle: "Hands-On Challenge",
     time: "10:45 AM – 1:15 PM",
-    venue: "Computer Lab",
+    venue: "Seminar Hall",
     highlights: [
       "Design and simulate IoT & Robotics prototypes using TinkerCAD and Wokwi in three progressive rounds: Easy, Medium, and Hard. Encourages innovation, creativity, and teamwork under mentorship."
     ],
@@ -54,7 +54,7 @@ const subEvents = [
     title: "RoboConnect",
     subtitle: "Demo & Quiz",
     time: "2:00 PM – 2:15 PM",
-    venue: "Robotics Lab",
+    venue: "Seminar Hall",
     highlights: [
       "Live Scorer Bot demonstration",
       "Quick quiz on Robotics, IoT, and Embedded Systems",
@@ -73,7 +73,7 @@ const subEvents = [
     title: "Bot Battle Zone",
     subtitle: "Robo Soccer Competition",
     time: "2:15 PM – 2:45 PM",
-    venue: "Robotics Arena",
+    venue: "Seminar Hall",
     highlights: [
       "Players compete in Robo Soccer using bots provided by the organizers – testing control, coordination, and strategy."
     ],
@@ -102,14 +102,16 @@ const SubEventsSection = () => {
           {subEvents.map((event, index) => (
             <div
               key={index}
-              className="bg-background/50 backdrop-blur-sm rounded-xl md:rounded-2xl border-2 border-cyan-500/50 overflow-hidden hover:border-cyan-400 hover:shadow-[0_0_30px_rgba(6,182,212,0.3)] transition-all duration-300 animate-slide-up"
+              className="group relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-md rounded-xl md:rounded-2xl border-2 border-cyan-500/40 overflow-hidden hover:border-cyan-400 hover:shadow-[0_8px_40px_rgba(6,182,212,0.4)] transition-all duration-500 animate-slide-up hover:scale-[1.02] hover:-translate-y-1"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="p-4 md:p-6">
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative p-4 md:p-6">
                 {/* Icon and Title */}
                 <div className="flex items-start gap-2 md:gap-3 mb-3 md:mb-4">
-                  <div className="w-9 h-9 md:w-10 md:h-10 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <event.icon className="w-4 h-4 md:w-5 md:h-5 text-cyan-400" />
+                  <div className="w-9 h-9 md:w-10 md:h-10 bg-gradient-to-br from-cyan-500/30 to-cyan-600/20 rounded-lg flex items-center justify-center flex-shrink-0 shadow-[0_0_20px_rgba(6,182,212,0.3)] group-hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] transition-shadow duration-300">
+                    <event.icon className="w-4 h-4 md:w-5 md:h-5 text-cyan-400 group-hover:text-cyan-300 transition-colors" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="text-lg md:text-xl font-bold text-cyan-400 mb-0.5 md:mb-1">{event.title}</h3>
@@ -154,8 +156,8 @@ const SubEventsSection = () => {
                 {/* Accordion for Rules */}
                 <Accordion type="single" collapsible>
                   <AccordionItem value={`rules-${index}`} className="border-0">
-                    <AccordionTrigger className="px-3 py-2 md:px-4 md:py-3 hover:no-underline border-2 border-cyan-500/50 rounded-lg hover:border-cyan-400 transition-colors">
-                      <span className="text-xs md:text-sm font-medium text-cyan-400">View Rules</span>
+                    <AccordionTrigger className="px-3 py-2 md:px-4 md:py-3 hover:no-underline border-2 border-cyan-500/50 rounded-lg hover:border-cyan-400 hover:bg-cyan-500/10 transition-all duration-300 hover:shadow-[0_0_15px_rgba(6,182,212,0.2)]">
+                      <span className="text-xs md:text-sm font-medium text-cyan-400 group-hover:text-cyan-300">View Rules</span>
                     </AccordionTrigger>
                     <AccordionContent className="px-3 md:px-4 pt-3 md:pt-4">
                       <ul className="space-y-1.5 md:space-y-2">
